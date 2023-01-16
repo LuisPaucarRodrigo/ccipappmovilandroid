@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="27dp"
+    android:paddingVertical="20dp"
+    android:weightSum="3">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/elemento_concepto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/qanelabolt"
+            android:textColor="@color/azulccip"
+            android:textSize="20dp"
+            android:paddingBottom="5dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/elemento_fecha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/azulccip"
+            android:inputType="time" />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/elemento_gasto"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:textColor="@color/azulccip"
+        android:gravity="center"
+        android:inputType="number"
+        android:textAlignment="textEnd"
+        android:layout_weight="1" />
+</LinearLayout>

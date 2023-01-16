@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingTop="20dp"
+    android:paddingLeft="27dp"
+    android:orientation="vertical"
+    android:background="@color/azulccip">
+
+    <ImageView
+        android:id="@+id/elemento_imagen"
+        android:layout_width="250px"
+        android:layout_height="250px"
+        android:layout_marginBottom="15dp"
+        android:src="@drawable/logotipo_fondo_azul__1_" />
+
+    <TextView
+        android:id="@+id/txtnombreuser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/qanelabolt"
+        android:layout_marginBottom="4dp"
+        android:textSize="16sp"
+        android:textColor="@color/white"
+        android:gravity="center_vertical"/>
+
+    <TextView
+        android:id="@+id/txtemail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+
+<!--    <TextView-->
+<!--        android:id="@+id/txtsaldo"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:fontFamily="sans-serif-medium"-->
+<!--        android:textSize="16sp"-->
+<!--        android:drawableLeft="@drawable/ic_baseline_attach_money_24"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:layout_marginBottom="15dp"/>-->
+</LinearLayout>

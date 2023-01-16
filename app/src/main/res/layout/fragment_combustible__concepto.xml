@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_horizontal"
+    android:background="@drawable/fondo"
+    android:orientation="vertical"
+    tools:context=".Combustible_ConceptoFragment">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="300px"
+        android:layout_height="300px"
+        android:layout_gravity="center"
+        android:layout_marginVertical="60dp"
+        android:src="@drawable/logo_ccip__1___1_" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/qanelabolt"
+        android:paddingBottom="35dp"
+        android:text="Combustible"
+        android:textAlignment="center"
+        android:textColor="@color/azulccip"
+        android:textSize="31dp"
+        android:textStyle="bold" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="30dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.2"
+                    android:fontFamily="@font/qanelabolt"
+                    android:paddingRight="10dp"
+                    android:text="Nro.Factura:"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/azulccip"
+                    android:textSize="20dp" />
+
+                <EditText
+                    android:id="@+id/txt_combustible_numero_Factura"
+                    android:textColor="@color/black"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.8"
+                    android:inputType="textCapCharacters"
+                    android:text="" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:paddingVertical="10dp"
+                android:weightSum="3">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.2"
+                    android:fontFamily="@font/qanelabolt"
+                    android:paddingRight="10dp"
+                    android:text="Monto Total:"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/azulccip"
+                    android:textSize="20dp" />
+
+                <EditText
+                    android:id="@+id/txt_combustible_monto_total"
+                    android:textColor="@color/black"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.8"
+                    android:inputType="numberDecimal"
+                    android:text="" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.2"
+                    android:fontFamily="@font/qanelabolt"
+                    android:paddingRight="10dp"
+                    android:text="KM:"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/azulccip"
+                    android:textSize="20dp" />
+
+                <EditText
+                    android:id="@+id/txt_combustible_kilometraje"
+                    android:textColor="@color/black"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.8"
+                    android:inputType="numberDecimal"
+                    android:text="" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:paddingVertical="10dp"
+                android:weightSum="3">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.2"
+                    android:fontFamily="@font/qanelabolt"
+                    android:paddingRight="10dp"
+                    android:text="Foto KM:"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/azulccip"
+                    android:textSize="20dp" />
+
+                <Button
+                    android:id="@+id/btn_combustible_foto_km"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.8"
+                    android:textColor="@color/white"
+                    android:backgroundTint="@color/azulccip"
+                    android:fontFamily="@font/qanelabolt"
+                    android:text="Subir foto" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.2"
+                    android:fontFamily="@font/qanelabolt"
+                    android:paddingRight="10dp"
+                    android:text="Foto Factura:"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/azulccip"
+                    android:textSize="20dp" />
+
+                <Button
+                    android:id="@+id/btn_combustible_foto_factura"
+                    android:textColor="@color/white"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.8"
+                    android:backgroundTint="@color/azulccip"
+                    android:fontFamily="@font/qanelabolt"
+                    android:text="Subir foto" />
+
+            </LinearLayout>
+            <Button
+                android:id="@+id/btn_combustible_Enviar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginVertical="50dp"
+                android:backgroundTint="@color/verdeccip"
+                android:fontFamily="@font/qanelabolt"
+                android:textColor="@color/white"
+                android:paddingHorizontal="28dp"
+                android:text="Enviar"
+                android:textSize="15dp" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

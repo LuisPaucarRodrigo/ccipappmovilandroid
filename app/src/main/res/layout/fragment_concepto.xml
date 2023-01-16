@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingHorizontal="20dp"
+    android:background="@drawable/fondo"
+    android:orientation="vertical"
+    tools:context=".ConceptoFragment">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="300px"
+        android:layout_height="300px"
+        android:layout_marginVertical="60dp"
+        android:layout_gravity="center"
+        android:src="@drawable/logo_ccip__1___1_" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Concepto"
+        android:textAlignment="center"
+        android:textColor="@color/azulccip"
+        android:fontFamily="@font/qanelabolt"
+        android:paddingBottom="55dp"
+        android:textSize="31dp"
+        android:textStyle="bold" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <Button
+                android:id="@+id/btnCombustible"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/azulccip"
+                android:paddingVertical="17.5dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:fontFamily="@font/qanelalight"
+                android:text="Combustible" />
+
+            <Button
+                android:id="@+id/btnPeaje"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/azulccip"
+                android:fontFamily="@font/qanelalight"
+                android:paddingVertical="17.5dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:text="Peaje" />
+
+            <Button
+                android:id="@+id/btnTraslado"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/azulccip"
+                android:fontFamily="@font/qanelalight"
+                android:paddingVertical="17.5dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:text="Traslado" />
+
+            <Button
+                android:id="@+id/btnOtros"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/azulccip"
+                android:fontFamily="@font/qanelalight"
+                android:paddingVertical="17.5dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:text="Otros" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

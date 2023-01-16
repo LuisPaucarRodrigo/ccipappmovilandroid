@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group
+        android:id="@+id/group_nav_main"
+        android:checkableBehavior="single"
+        >
+        <item
+            android:id="@+id/nav_home"
+            android:title="Home"
+            android:icon="@drawable/ic_baseline_home_24"
+            />
+        <item
+            android:id="@+id/nav_saldo"
+            android:title="Saldo"
+            android:icon="@drawable/ic_baseline_attach_money_24"
+            />
+        <item
+            android:id="@+id/nav_logout"
+            android:title="Cerrar Sesion"
+            android:icon="@android:drawable/ic_lock_power_off"
+            />
+    </group>
+</menu>
