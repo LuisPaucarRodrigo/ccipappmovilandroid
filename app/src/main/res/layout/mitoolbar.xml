@@ -5,4 +5,16 @@
     android:layout_height="50dp"
     app:titleTextColor="@color/white"
     android:background="@color/azulccip">
+
+    <!-- TextView a la derecha -->
+    <TextView
+        android:id="@+id/rightTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:paddingEnd="16dp"
+        android:text="V.2.1.1"
+        android:textColor="@color/white"
+        android:textSize="14sp" />
+
 </androidx.appcompat.widget.Toolbar>

@@ -6,7 +6,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.FragmentTransaction
 import kotlinx.android.synthetic.main.fragment_concepto.view.*
 
 // TODO: Rename parameter arguments, choose names that match
@@ -44,30 +43,34 @@ class ConceptoFragment : Fragment() {
             zona = requireArguments().getString("zona").toString()
         }
             view.btnCombustible.setOnClickListener{
-                opciones(Combustible_ConceptoFragment())
+                opciones(CombustibleConceptoFragment())
                 //combustible()
             }
             view.btnPeaje.setOnClickListener{
-                opciones(Peaje_ConceptoFragment())
+                opciones(PeajeConceptoFragment())
                 //peaje()
             }
             view.btnTraslado.setOnClickListener{
-                opciones(Traslado_ConceptoFragment())
+                opciones(TrasladoConceptoFragment())
                 //traslado()
             }
             view.btnOtros.setOnClickListener {
-                opciones(Otros_ConceptoFragment())
+                opciones(OtrosConceptoFragment())
                 //otros()
+            }
+            view.btnCombustibleGEP.setOnClickListener {
+                opciones(CombustibleGPEConceptoFragment())
+                //combustible()
             }
         return view
     }
     private fun opciones(op:Fragment) {
-        val options = op
+
         val transaccion = requireActivity().supportFragmentManager.beginTransaction()
         val args = Bundle()
         args.putString("zona",zona)
-        options.arguments = args
-        transaccion.replace(R.id.contenedor, options)
+        op.arguments = args
+        transaccion.replace(R.id.contenedor, op)
             .addToBackStack(null)
         transaccion.commit()
     }

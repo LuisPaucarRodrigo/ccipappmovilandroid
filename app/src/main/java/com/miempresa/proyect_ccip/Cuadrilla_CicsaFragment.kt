@@ -77,12 +77,12 @@ class Cuadrilla_CicsaFragment : Fragment() {
     }
 
     private fun conceptos(zona:String) {
-        val ConceptoFragment = ConceptoFragment()
+        val conceptoFragment = ConceptoFragment()
         val args = Bundle()
         args.putString("zona",zona)
-        ConceptoFragment.arguments = args
+        conceptoFragment.arguments = args
         val transaccion: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
-        transaccion.replace(R.id.contenedor,ConceptoFragment)
+        transaccion.replace(R.id.contenedor,conceptoFragment)
             .addToBackStack(null)
         transaccion.commit()
     }

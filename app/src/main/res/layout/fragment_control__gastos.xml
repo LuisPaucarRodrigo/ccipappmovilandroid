@@ -43,7 +43,7 @@
                 android:paddingVertical="17.5dp"
                 android:background="?android:attr/selectableItemBackground"
                 android:fontFamily="@font/qanelalight"
-                android:text="Cuadrilla Cicsa" />
+                android:text="Cuadrilla Cicsa Claro Pint" />
 
             <Button
                 android:id="@+id/btnAlquilerGPE"
@@ -53,7 +53,7 @@
                 android:fontFamily="@font/qanelalight"
                 android:paddingVertical="17.5dp"
                 android:background="?android:attr/selectableItemBackground"
-                android:text="Alquiler GEP" />
+                android:text="Cuadrilla Cicsa Claro Pxt" />
 
             <Button
                 android:id="@+id/btnMPA"
@@ -63,7 +63,7 @@
                 android:fontFamily="@font/qanelalight"
                 android:paddingVertical="17.5dp"
                 android:background="?android:attr/selectableItemBackground"
-                android:text="MPA" />
+                android:text="Cuadrilla Cicsa Gtd" />
 
             <Button
                 android:id="@+id/btnSEAL"

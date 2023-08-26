@@ -17,8 +17,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Request
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
-import org.json.JSONException
 import org.json.JSONObject
+import java.util.*
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -36,7 +36,7 @@ Operaciones_Gastos_Fragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
-
+    private val llenarLista = ArrayList<Elementos>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -59,7 +59,6 @@ Operaciones_Gastos_Fragment : Fragment() {
 //        saldouser.text = sp.getString("saldo","")
         return view
     }
-
     @SuppressLint("SetTextI18n", "SuspiciousIndentation")
     private fun cargarLista(movimientos: RecyclerView, sp: SharedPreferences, saldouser: TextView){
 
@@ -67,7 +66,7 @@ Operaciones_Gastos_Fragment : Fragment() {
             AsyncTask.execute {
             movimientos.addItemDecoration(DividerItemDecoration(context, DividerItemDecoration.VERTICAL))
             movimientos.layoutManager = LinearLayoutManager(context)
-            val llenarLista = ArrayList<Elementos>()
+
             val queue = Volley.newRequestQueue(context)
             val json = JSONObject()
                 json.put("token",sp.getString("token",""))
@@ -82,10 +81,10 @@ Operaciones_Gastos_Fragment : Fragment() {
                             val concepto =
                                 operaciones.getJSONObject(i).getString("concepto").toString()
                             val fechaoperacion =
-                                operaciones.getJSONObject(i).getString("fecha_operacion").toString()
+                                operaciones.getJSONObject(i).getString("fecha_insercion").toString()
                             val gastos =
                                 operaciones.getJSONObject(i).getString("gasto").toString()
-                            llenarLista.add(Elementos(concepto,fechaoperacion,gastos))
+                            llenarLista.add(Elementos(concepto, fechaoperacion, "-$gastos"))
                         }
                         val adapter = AdaptadorElementos(llenarLista)
                         movimientos.adapter = adapter

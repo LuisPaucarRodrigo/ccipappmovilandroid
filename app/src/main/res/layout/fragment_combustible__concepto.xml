@@ -6,7 +6,7 @@
     android:layout_gravity="center_horizontal"
     android:background="@drawable/fondo"
     android:orientation="vertical"
-    tools:context=".Combustible_ConceptoFragment">
+    tools:context=".CombustibleConceptoFragment">
 
     <ImageView
         android:id="@+id/imageView"
@@ -51,6 +51,35 @@
                     android:layout_weight="1.2"
                     android:fontFamily="@font/qanelabolt"
                     android:paddingRight="10dp"
+                    android:text="RUC:"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/azulccip"
+                    android:textSize="20dp" />
+
+                <EditText
+                    android:id="@+id/txt_combustible_numero_Ruc"
+                    android:textColor="@color/black"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.8"
+                    android:inputType="number"
+                    android:maxLength="11"
+                    android:text="" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.2"
+                    android:fontFamily="@font/qanelabolt"
+                    android:paddingRight="10dp"
                     android:text="Nro.Factura:"
                     android:textAlignment="textEnd"
                     android:textColor="@color/azulccip"
@@ -64,6 +93,37 @@
                     android:layout_weight="1.8"
                     android:inputType="textCapCharacters"
                     android:text="" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.2"
+                    android:fontFamily="@font/qanelabolt"
+                    android:paddingRight="10dp"
+                    android:text="Fecha Factura:"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="right"
+                    android:textColor="@color/azulccip"
+                    android:textSize="20dp" />
+
+                <EditText
+                    android:id="@+id/dateEditTextCombustible"
+                    android:textColor="@color/black"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.8"
+                    android:inputType="date"
+                    android:textAlignment="center"
+                    android:hint="Seleccionar fecha"
+                    android:focusable="false" />
             </LinearLayout>
 
             <LinearLayout

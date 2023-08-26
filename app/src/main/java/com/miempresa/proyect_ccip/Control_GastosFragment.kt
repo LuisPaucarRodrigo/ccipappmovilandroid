@@ -22,7 +22,6 @@ class Control_GastosFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
-    private var iduser:String = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -41,7 +40,7 @@ class Control_GastosFragment : Fragment() {
 
         val view:View = inflater.inflate(R.layout.fragment_control__gastos, container, false)
         view.btnCuadrilla_cicsa.setOnClickListener{
-            cuadrilla_cicsa()
+            cuadrillaCicsa()
         }
         return view
     }
@@ -66,10 +65,10 @@ class Control_GastosFragment : Fragment() {
             }
     }
 
-    private fun cuadrilla_cicsa() {
-        val Cuadrilla_CicsaFragment = Cuadrilla_CicsaFragment()
+    private fun cuadrillaCicsa() {
+        val cuadrillaCicsaFragment = Cuadrilla_CicsaFragment()
         val transaccion: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
-        transaccion.replace(R.id.contenedor,Cuadrilla_CicsaFragment)
+        transaccion.replace(R.id.contenedor,cuadrillaCicsaFragment)
             .addToBackStack(null)
         transaccion.commit()
     }

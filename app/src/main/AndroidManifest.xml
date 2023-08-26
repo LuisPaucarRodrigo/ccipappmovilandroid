@@ -12,6 +12,7 @@
     <uses-permission
         android:name="android.permission.CAMERA"
         android:required="true" />
+    <uses-permission android:name="android.permission.NOTIFICATION_POLICY"/>
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -46,6 +47,7 @@
 
         <activity
             android:name=".BaseActivity"
+            android:screenOrientation="portrait"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -54,6 +56,7 @@
         <activity
             android:name=".AuthActivity"
             android:exported="true"
+            android:screenOrientation="portrait"
             android:theme="@style/Splash_theme_ccip">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

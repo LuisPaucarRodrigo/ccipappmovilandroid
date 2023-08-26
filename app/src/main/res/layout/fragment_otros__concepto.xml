@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/fondo"
-    tools:context=".Otros_ConceptoFragment">
+    tools:context=".OtrosConceptoFragment">
 
     <ImageView
         android:id="@+id/imageView"
@@ -35,6 +35,35 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:paddingHorizontal="30dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.2"
+                    android:fontFamily="@font/qanelabolt"
+                    android:paddingRight="10dp"
+                    android:text="RUC:"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/azulccip"
+                    android:textSize="20dp" />
+
+                <EditText
+                    android:id="@+id/txt_otros_numero_Ruc"
+                    android:textColor="@color/black"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.8"
+                    android:inputType="number"
+                    android:maxLength="11"
+                    android:text="" />
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -88,6 +117,37 @@
                     android:layout_weight="1.8"
                     android:inputType="textCapCharacters"
                     android:maxLines="1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.2"
+                    android:fontFamily="@font/qanelabolt"
+                    android:paddingRight="10dp"
+                    android:text="Fecha Factura:"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="right"
+                    android:textColor="@color/azulccip"
+                    android:textSize="20dp" />
+
+                <EditText
+                    android:id="@+id/dateEditTextOtros"
+                    android:textColor="@color/black"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.8"
+                    android:inputType="date"
+                    android:textAlignment="center"
+                    android:hint="Seleccionar fecha"
+                    android:focusable="false" />
             </LinearLayout>
 
             <LinearLayout
@@ -193,7 +253,7 @@
                     android:textSize="20dp" />
 
                 <Button
-                    android:id="@+id/btn_otros_foto"
+                    android:id="@+id/btnOtrosFoto"
                     android:textColor="@color/white"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -203,7 +263,7 @@
                     android:text="Subir foto" />
             </LinearLayout>
             <Button
-                android:id="@+id/btn_otros_Enviar"
+                android:id="@+id/btnOtrosEnviar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="50dp"

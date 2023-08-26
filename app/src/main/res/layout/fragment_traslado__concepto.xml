@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/fondo"
     android:orientation="vertical"
-    tools:context=".Traslado_ConceptoFragment">
+    tools:context=".TrasladoConceptoFragment">
 
     <ImageView
         android:id="@+id/imageView"
@@ -105,20 +105,41 @@
                     android:layout_weight="1.2"
                     android:fontFamily="@font/qanelabolt"
                     android:paddingRight="10dp"
-                    android:text="Nro.Inc o CRQ:"
+                    android:text="Operacion:"
                     android:layout_gravity="center_vertical"
                     android:gravity="right"
                     android:textColor="@color/azulccip"
                     android:textSize="20dp" />
 
+                <Spinner
+                    android:id="@+id/spinnerTrasladoNroIncCrq"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.8"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingVertical="10dp"
+                android:weightSum="3">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.2"
+                    android:fontFamily="@font/qanelabolt"
+                    android:paddingRight="10dp"
+                    android:text="Nro Oper:"
+                    android:gravity="right"
+                    android:textColor="@color/azulccip"
+                    android:textSize="20dp" />
                 <EditText
-                    android:id="@+id/txt_traslado_nro_inc_o_crq"
+                    android:id="@+id/txt_traslado_operacion"
                     android:textColor="@color/black"
                     android:layout_width="0dp"
-                    android:maxLines="1"
                     android:layout_height="wrap_content"
                     android:layout_weight="1.8"
-                    android:layout_gravity="center_vertical"
                     android:inputType="number"
                     android:text="" />
             </LinearLayout>

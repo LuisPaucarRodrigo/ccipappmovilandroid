@@ -22,10 +22,11 @@ import org.json.JSONObject
 class AuthActivity : AppCompatActivity() {
 
     private var id = ""
-    private var usuario = ""
+    private var usuariodni = ""
     private var password = ""
     private var nombre = ""
     private var apellido = ""
+    private var dni = ""
     private var email = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -57,7 +58,7 @@ class AuthActivity : AppCompatActivity() {
         val sp:SharedPreferences = getSharedPreferences("my_prefs",Context.MODE_PRIVATE)
 
         btnlogeo.setOnClickListener{
-            usuario = findViewById<EditText>(R.id.txtusuario).text.toString()
+            usuariodni = findViewById<EditText>(R.id.txtusuariodni).text.toString()
             password = findViewById<EditText>(R.id.txtpassword).text.toString()
             validate(sp)
         }
@@ -91,15 +92,15 @@ class AuthActivity : AppCompatActivity() {
         if(false in result){
             return
         }
-        autenthication(usuario,password,sp)
+        autenthication(usuariodni,password,sp)
     }
 
     private fun validateEmail():Boolean {
-        return if(usuario.isEmpty()){
-            txtusuario.error = "Campo Obligatorio"
+        return if(usuariodni.isEmpty()){
+            txtusuariodni.error = "Campo Obligatorio"
             false
         }else{
-            txtusuario.error = null
+            txtusuariodni.error = null
             true
         }
     }
@@ -116,7 +117,7 @@ class AuthActivity : AppCompatActivity() {
             this.finish()
         }else{
             if (sp.getString("remember","") == "true"){
-                txtusuario.setText(sp.getString("user",""))
+                txtusuariodni.setText(sp.getString("dni",""))
                 txtpassword.setText(sp.getString("password",""))
             }
         }
@@ -129,6 +130,7 @@ class AuthActivity : AppCompatActivity() {
         id: String,
         nombre: String,
         apellido: String,
+        dni:String,
         email: String
     ) {
         val checkedPreference = findViewById<CheckBox>(R.id.checkBox_sharedPreference)
@@ -139,6 +141,7 @@ class AuthActivity : AppCompatActivity() {
                 putString("id",id)
                 putString("nombre",nombre)
                 putString("apellido",apellido)
+                putString("dni",dni)
                 putString("email",email)
                 putString("active","true")
                 putString("remember","true")
@@ -148,6 +151,7 @@ class AuthActivity : AppCompatActivity() {
             with(sp.edit()){
                 putString("nombre",nombre)
                 putString("apellido",apellido)
+                putString("dni",dni)
                 putString("email",email)
                 putString("id",id)
                 putString("active","true")
@@ -160,11 +164,11 @@ class AuthActivity : AppCompatActivity() {
         this.finish()
     }
 
-    private fun autenthication(usuario: String, password: String, sp: SharedPreferences) {
+    private fun autenthication(usuariodni: String, password: String, sp: SharedPreferences) {
         val queue = Volley.newRequestQueue(this)
         val url = getString(R.string.urlAPI)+"/api/login"
         val json = JSONObject()
-        json.put("username",usuario)
+        json.put("dni",usuariodni)
         json.put("password",password)
         val stringRequest = JsonObjectRequest(
             Request.Method.POST,url,json,
@@ -174,8 +178,9 @@ class AuthActivity : AppCompatActivity() {
                     id = response.getString("id").toString()
                     nombre = response.getString("name").toString()
                     apellido = response.getString("lastname").toString()
+                    dni = response.getString("dni").toString()
                     email = response.getString("email").toString()
-                    rememberUser(sp,usuario,password,id,nombre,apellido,email)
+                    rememberUser(sp,usuariodni,password,id,nombre,apellido,dni,email)
                     with(sp.edit()){
                         putString("token",token)
                         apply()

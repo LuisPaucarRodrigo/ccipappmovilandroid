@@ -32,7 +32,7 @@
         android:textColor="@color/azulccip"
         android:textSize="15dp"
         android:gravity="center"
-        android:text="Verifica que tu telefono este conectado a una res wi-fi o a datos moviles" />
+        android:text="Verifica que estes conectado a una red wi-fi o datos moviles" />
 
     <com.airbnb.lottie.LottieAnimationView
         android:layout_width="wrap_content"

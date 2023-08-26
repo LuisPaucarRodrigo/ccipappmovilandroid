@@ -76,6 +76,16 @@
                 android:background="?android:attr/selectableItemBackground"
                 android:text="Otros" />
 
+            <Button
+                android:id="@+id/btnCombustibleGEP"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/azulccip"
+                android:fontFamily="@font/qanelalight"
+                android:paddingVertical="17.5dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:text="Combustible GEP" />
+
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

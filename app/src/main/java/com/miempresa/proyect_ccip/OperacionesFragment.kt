@@ -65,9 +65,9 @@ class OperacionesFragment : Fragment() {
     }
 
     private fun Control_de_Gastos() {
-        val Control_GastosFragment = Control_GastosFragment()
+        val controlGastosFragment = Control_GastosFragment()
         val transaccion: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
-        transaccion.replace(R.id.contenedor,Control_GastosFragment)
+        transaccion.replace(R.id.contenedor,controlGastosFragment)
             .addToBackStack(null)
         transaccion.commit()
     }

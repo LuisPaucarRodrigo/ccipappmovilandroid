@@ -12,6 +12,10 @@ import androidx.core.view.GravityCompat
 import androidx.fragment.app.FragmentTransaction
 import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.activity_base.*
+import androidx.work.*
+import java.util.concurrent.TimeUnit
+import androidx.work.PeriodicWorkRequestBuilder
+import java.util.Calendar
 
 
 class BaseActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelectedListener {
@@ -19,17 +23,39 @@ class BaseActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelected
     private var nombre:String = ""
     private var apellido:String = ""
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(R.style.Theme_Proyect_ccip)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_base)
         //SharedPreferences
         val sp:SharedPreferences = getSharedPreferences("my_prefs",Context.MODE_PRIVATE)
+
+        val now = Calendar.getInstance()
+        val calendar = Calendar.getInstance().apply {
+            set(Calendar.HOUR_OF_DAY, 23) // Hora en formato de 24 horas
+            set(Calendar.MINUTE, 37)
+            set(Calendar.SECOND, 0)
+            if (before(now)) {
+                add(Calendar.DAY_OF_MONTH, 1) // Si ya pasó la hora de hoy, establece para mañana
+            }
+        }
+
+        val delay = calendar.timeInMillis - now.timeInMillis
+
+        val workRequest = OneTimeWorkRequestBuilder<MyWorker>()
+            .setInitialDelay(delay, TimeUnit.MILLISECONDS)
+            .build()
+
+        WorkManager.getInstance(applicationContext).enqueue(workRequest)
+
+
+
         //NavigatioView
         val navigationView: NavigationView =findViewById(R.id.nav_view)
         navigationView.setNavigationItemSelectedListener(this)
 
+//        setSupportActionBar(findViewById(R.id.mitoolbar))
+//        supportActionBar?.setDisplayShowTitleEnabled(false)
         setSupportActionBar(findViewById(R.id.mitoolbar))
         supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_baseline_menu_24)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
@@ -42,9 +68,11 @@ class BaseActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelected
 
         val navheader = navigationView.getHeaderView(0)
         val nameheader = navheader.findViewById<TextView>(R.id.txtnombreuser)
+        val nameheaderdni = navheader.findViewById<TextView>(R.id.txtdniuser)
         val nameheaderemail = navheader.findViewById<TextView>(R.id.txtemail)
 
         nameheader.text = sp.getString("nombre","")+" "+sp.getString("apellido","")
+        nameheaderdni.text = sp.getString("dni","")
         nameheaderemail.text = sp.getString("email","")+"\n"
 
         val transaccion: FragmentTransaction = supportFragmentManager.beginTransaction()
@@ -89,7 +117,7 @@ class BaseActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelected
         builder.setTitle("Cerrar Sesion")
         builder.setMessage("Esta seguro de Cerrar Sesion?")
 
-        builder.setPositiveButton(android.R.string.yes) { dialog, which ->
+        builder.setPositiveButton(android.R.string.yes) { _, _ ->
             val sp = getSharedPreferences("my_prefs", Context.MODE_PRIVATE)
             with(sp.edit()){
                 putString("id","")
@@ -97,11 +125,11 @@ class BaseActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelected
                 putString("active","false")
                 apply()
             }
-            val AuthActivity = Intent(this,AuthActivity::class.java)
-            startActivity(AuthActivity)
+            val authActivity = Intent(this,AuthActivity::class.java)
+            startActivity(authActivity)
             finish()
         }
-        builder.setNegativeButton(android.R.string.no) { dialog, which ->
+        builder.setNegativeButton(android.R.string.no) { _, _ ->
         }
         builder.show()
     }

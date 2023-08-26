@@ -20,7 +20,7 @@ private const val ARG_PARAM2 = "param2"
  * Use the [EnvioCorrectoFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class EnvioCorrectoFragment : Fragment() {
+open class EnvioCorrectoFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -36,14 +36,14 @@ class EnvioCorrectoFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         val view:View = inflater.inflate(R.layout.fragment_envio_correcto, container, false)
-            Handler(Looper.getMainLooper()).postDelayed(3000){
-                val transaccion: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
-                transaccion.replace(R.id.contenedor,OperacionesFragment())
-                transaccion.commit()
-            }
+        Handler(Looper.getMainLooper()).postDelayed(3000){
+            val transaccion: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
+            transaccion.replace(R.id.contenedor,OperacionesFragment())
+            transaccion.commit()
+        }
         return view
     }
 
